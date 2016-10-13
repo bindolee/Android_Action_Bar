@@ -26,12 +26,14 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId()){
             case R.id.main_menu_option1:
                 showToast(this, "Option 1 selected");
+                setSupportActionBarLogoandTitle();
                 break;
             case R.id.main_menu_option2:
                 showToast(this, "Option 2 selected");
                 break;
             case R.id.main_menu_option3:
                 showToast(this, "Option 3 selected");
+                hideActionBarTitleandSubTitle();
                 break;
             case R.id.main_menu_exit:
                 showToast(this, "Exit selected");
@@ -41,6 +43,19 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
         return true;
+    }
+
+    //Set Actionbar logo and title.and hide it
+    public void setSupportActionBarLogoandTitle() {
+        getSupportActionBar().setDisplayShowTitleEnabled(true);
+        getSupportActionBar().setLogo(R.drawable.pluralsight_logo_whiteback);
+        getSupportActionBar().setTitle("Android ActionBar");
+        getSupportActionBar().setSubtitle("Improve UI interface");
+    }
+
+    // Hide the title and subtitle.
+    public void hideActionBarTitleandSubTitle(){
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
     }
 
     public void showToast(Context context, CharSequence msg){
